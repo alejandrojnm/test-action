@@ -22,12 +22,12 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: GitHub Action for Civo - civo
+    - name: Install Civo
       uses: civo/action-civo@v1.0.0
       with:
         # Civo API Token
         token: ${{ secrets.CIVO_TOKEN }}
 
     # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
+    - name: List all instances
       run: civo instances ls
